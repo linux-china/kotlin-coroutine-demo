@@ -19,7 +19,7 @@ dependencies {
     compile(kotlin("stdlib", "1.3.10"))
     compile(kotlin("stdlib-jdk8", "1.3.10"))
     testCompile(kotlin("test-junit5", "1.3.10"))
-    compileOnly("org.jetbrains.kotlinx:atomicfu:0.11.12")
+    compile("org.jetbrains.kotlinx:atomicfu:0.11.12")
 
     compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1")
     compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.0.1")
