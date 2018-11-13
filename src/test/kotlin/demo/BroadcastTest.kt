@@ -1,5 +1,6 @@
 package demo
 
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.broadcast
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.delay
@@ -7,10 +8,11 @@ import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 
 /**
- * Created with IntelliJ IDEA.
+ * broadcast test
  *
  * @author linux_china
  */
+@ExperimentalCoroutinesApi
 class BroadcastTest {
 
     @Test
