@@ -1,10 +1,8 @@
-import org.jetbrains.kotlin.config.AnalysisFlag.Flags.experimental
-import org.jetbrains.kotlin.gradle.dsl.Coroutines
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     application
-    kotlin("jvm") version "1.3.11"
+    kotlin("jvm") version "1.3.30"
     id("kotlinx-atomicfu").version("0.11.12")
 }
 
@@ -15,17 +13,17 @@ application {
 }
 
 dependencies {
-    compile("org.jetbrains:annotations:16.0.3")
-    compile(kotlin("stdlib", "1.3.11"))
-    compile(kotlin("stdlib-jdk8", "1.3.11"))
-    testCompile(kotlin("test-junit5", "1.3.11"))
+    compile("org.jetbrains:annotations:17.0.0")
+    compile(kotlin("stdlib", "1.3.30"))
+    compile(kotlin("stdlib-jdk8", "1.3.30"))
+    testCompile(kotlin("test-junit5", "1.3.30"))
     compile("org.jetbrains.kotlinx:atomicfu:0.11.12")
 
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1")
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.0.1")
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.0.1")
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.3.1")
-    testCompile("org.junit.jupiter:junit-jupiter-params:5.3.1")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0-alpha-2")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.2.0-alpha-2")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.2.0-alpha-2")
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.4.2")
+    testCompile("org.junit.jupiter:junit-jupiter-params:5.4.2")
 }
 
 repositories {
@@ -35,7 +33,7 @@ repositories {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
         javaParameters = true
         freeCompilerArgs = listOf("-Xjsr305=strict")
     }
