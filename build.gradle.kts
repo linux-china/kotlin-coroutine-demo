@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     application
     kotlin("jvm") version "1.3.30"
-    id("kotlinx-atomicfu").version("0.11.12")
+    id("kotlinx-atomicfu").version("0.12.3")
 }
 
 application {
@@ -33,7 +33,7 @@ repositories {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
         javaParameters = true
         freeCompilerArgs = listOf("-Xjsr305=strict")
     }
