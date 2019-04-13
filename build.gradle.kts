@@ -17,11 +17,11 @@ dependencies {
     compile(kotlin("stdlib", "1.3.30"))
     compile(kotlin("stdlib-jdk8", "1.3.30"))
     testCompile(kotlin("test-junit5", "1.3.30"))
-    compile("org.jetbrains.kotlinx:atomicfu:0.11.12")
+    compile("org.jetbrains.kotlinx:atomicfu:0.12.3")
 
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0-alpha-2")
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.2.0-alpha-2")
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.2.0-alpha-2")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.2.0")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.2.0")
     testCompile("org.junit.jupiter:junit-jupiter-api:5.4.2")
     testCompile("org.junit.jupiter:junit-jupiter-params:5.4.2")
 }
