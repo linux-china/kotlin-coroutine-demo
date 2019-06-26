@@ -1,8 +1,19 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotlinVersion = "1.3.40"
-val coroutinesVersion = "1.3.0-M1"
+val coroutinesVersion = "1.3.0-M2"
 val junit5Version = "5.5.0-RC2"
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.1.0")
+    }
+}
 
 plugins {
     application
