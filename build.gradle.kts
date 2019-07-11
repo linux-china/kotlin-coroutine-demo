@@ -35,6 +35,8 @@ dependencies {
     testCompile(kotlin("test-junit5", kotlinVersion))
     compile("org.jetbrains.kotlinx:atomicfu:0.12.8")
     compile("com.squareup.retrofit2:retrofit:2.6.0")
+    compile("com.squareup.retrofit2:converter-jackson:2.6.0")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9")
 
     compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
     compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${coroutinesVersion}")
