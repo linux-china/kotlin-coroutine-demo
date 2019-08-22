@@ -32,6 +32,7 @@ dependencies {
     compile("org.jetbrains:annotations:17.0.0")
     compile(kotlin("stdlib", kotlinVersion))
     compile(kotlin("stdlib-jdk8", kotlinVersion))
+    compile(kotlin("reflect", kotlinVersion))
     testCompile(kotlin("test-junit5", kotlinVersion))
     compile("org.jetbrains.kotlinx:atomicfu:0.12.10")
     compile("com.squareup.retrofit2:retrofit:2.6.0")
