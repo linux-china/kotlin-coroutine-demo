@@ -18,7 +18,7 @@ buildscript {
 plugins {
     application
     kotlin("jvm") version "1.3.41"
-    id("kotlinx-atomicfu").version("0.12.8")
+    id("kotlinx-atomicfu").version("0.12.10")
 }
 
 
@@ -33,7 +33,7 @@ dependencies {
     compile(kotlin("stdlib", kotlinVersion))
     compile(kotlin("stdlib-jdk8", kotlinVersion))
     testCompile(kotlin("test-junit5", kotlinVersion))
-    compile("org.jetbrains.kotlinx:atomicfu:0.12.8")
+    compile("org.jetbrains.kotlinx:atomicfu:0.12.10")
     compile("com.squareup.retrofit2:retrofit:2.6.0")
     compile("com.squareup.retrofit2:converter-jackson:2.6.0")
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9")
