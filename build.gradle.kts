@@ -17,7 +17,7 @@ buildscript {
 
 plugins {
     application
-    kotlin("jvm") version "1.3.41"
+    kotlin("jvm") version "1.3.50"
     id("kotlinx-atomicfu").version("0.12.10")
 }
 
