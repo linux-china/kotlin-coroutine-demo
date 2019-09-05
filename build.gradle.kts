@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotlinVersion = "1.3.50"
-val coroutinesVersion = "1.3.0"
+val coroutinesVersion = "1.3.1"
 val junit5Version = "5.5.1"
 
 
@@ -18,7 +18,7 @@ buildscript {
 plugins {
     application
     kotlin("jvm") version "1.3.50"
-    id("kotlinx-atomicfu").version("0.12.10")
+    id("kotlinx-atomicfu").version("0.13.0")
 }
 
 
