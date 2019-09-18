@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotlinVersion = "1.3.50"
 val coroutinesVersion = "1.3.1"
-val junit5Version = "5.5.1"
+val junit5Version = "5.5.2"
 
 
 buildscript {
@@ -34,7 +34,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8", kotlinVersion))
     compile(kotlin("reflect", kotlinVersion))
     testCompile(kotlin("test-junit5", kotlinVersion))
-    compile("org.jetbrains.kotlinx:atomicfu:0.12.10")
+    compile("org.jetbrains.kotlinx:atomicfu:0.13.0")
     compile("com.squareup.retrofit2:retrofit:2.6.0")
     compile("com.squareup.retrofit2:converter-jackson:2.6.0")
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9")
