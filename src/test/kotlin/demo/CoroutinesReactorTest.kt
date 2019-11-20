@@ -1,9 +1,9 @@
 package demo
 
-import kotlinx.coroutines.reactive.consumeEach
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.reactor.mono
-import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
+import reactor.core.publisher.Mono
 
 /**
  * coroutine reactor test
@@ -13,10 +13,21 @@ import org.junit.jupiter.api.Test
 class CoroutinesReactorTest {
 
     @Test
-    fun testReactor() = runBlocking<Unit> {
-        val user = mono {
-            "good"
+    fun testReactor() {
+        val result = mono {
+            asyncCall()
         }
-        user.consumeEach { println(it) }
+        println(result.block())
+    }
+
+    @Test
+    fun testReactorToJob() {
+        val one = Mono.just("first")
+    }
+
+
+    private suspend fun asyncCall(): Int {
+        delay(1000L) // pretend we are doing something useful here, too
+        return 29
     }
 }
