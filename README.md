@@ -19,4 +19,5 @@ val channel = Channel<Int>()
 
 * Introduction to Coroutines and Channels: https://play.kotlinlang.org/hands-on/Introduction%20to%20Coroutines%20and%20Channels/01_Introduction
 * Kotlin coroutines: https://github.com/Kotlin/kotlinx.coroutines
+* Kotlin Flow: https://kotlinlang.org/docs/reference/coroutines/flow.html
 * AtomicFU: https://github.com/Kotlin/kotlinx.atomicfu
