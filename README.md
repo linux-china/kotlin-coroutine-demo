@@ -15,6 +15,28 @@ val channel = Channel<Int>()
 * Mutex: Mutual exclusion, mutex.withLock { counter++ }
 * select: Select expression makes it possible to await multiple suspending functions simultaneously and select the first one that becomes available.
 
+# Convert between Coroutines and Reactive
+
+* Kotlin Coroutines Service with Flow
+
+```kotlin
+interface UserService {
+    suspend fun getNick(): String
+    suspend fun getNickById(id: Int): String
+    fun getAllNames(): Flow<String>
+}
+```
+
+* Kotlin compiled to Java. Continuation as last param of suspend method
+
+```
+public interface UserService {
+  public abstract java.lang.Object getNick(kotlin.coroutines.Continuation<? super java.lang.String>);
+  public abstract java.lang.Object getNickById(int, kotlin.coroutines.Continuation<? super java.lang.String>);
+  public abstract kotlinx.coroutines.flow.Flow<java.lang.String> getAllNames();
+}
+```
+
 # References
 
 * Introduction to Coroutines and Channels: https://play.kotlinlang.org/hands-on/Introduction%20to%20Coroutines%20and%20Channels/01_Introduction
