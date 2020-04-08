@@ -36,6 +36,7 @@ dependencies {
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
     implementation("org.jetbrains.kotlinx:atomicfu:0.14.3")
+    implementation("io.projectreactor:reactor-core:3.3.4.RELEASE")
     implementation("com.squareup.retrofit2:retrofit:2.8.1")
     implementation("com.squareup.retrofit2:converter-jackson:2.8.1")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.10.3")
