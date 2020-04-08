@@ -19,6 +19,7 @@ plugins {
     application
     kotlin("jvm") version "1.3.71"
     id("kotlinx-atomicfu").version("0.14.3")
+    id("com.github.ben-manes.versions").version("0.28.0")
 }
 
 
