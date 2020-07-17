@@ -12,10 +12,18 @@ import org.junit.jupiter.api.Test
  */
 class CoroutinesTest {
 
+    suspend fun sus1(): Int {
+        return 1
+    }
+    suspend fun entrance() {
+        println(sus1())
+    }
+
     @Test
     fun testOne() {
         GlobalScope.launch {
             // create new coroutine in common thread pool
+            entrance();
             delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
             println("World!") // print after delay
         }
