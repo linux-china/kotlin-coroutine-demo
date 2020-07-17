@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotlinVersion = "1.3.72"
-val coroutinesVersion = "1.3.7"
+val coroutinesVersion = "1.3.8"
 val junit5Version = "5.6.2"
 
 
