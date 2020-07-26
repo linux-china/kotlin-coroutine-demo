@@ -1,40 +1,51 @@
 package demo
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.actor
-import kotlinx.coroutines.runBlocking
+import kotlin.system.measureTimeMillis
 
-/**
- * actor demo
- *
- * @author linux_china
- */
+suspend fun massiveRun(action: suspend () -> Unit) {
+    val n = 100  // number of coroutines to launch
+    val k = 1000 // times an action is repeated by each coroutine
+    val time = measureTimeMillis {
+        coroutineScope { // scope for coroutines
+            repeat(n) {
+                launch {
+                    repeat(k) { action() }
+                }
+            }
+        }
+    }
+    println("Completed ${n * k} actions in $time ms")
+}
 
 // Message types for counterActor
 sealed class CounterMsg
-
 object IncCounter : CounterMsg() // one-way message to increment counter
-class GetCounter(val response: Channel<Int>) : CounterMsg() // a request with reply
-
+class GetCounter(val response: CompletableDeferred<Int>) : CounterMsg() // a request with reply
 
 // This function launches a new counter actor
-fun counterActor() = GlobalScope.actor<CounterMsg> {
+fun CoroutineScope.counterActor() = actor<CounterMsg> {
     var counter = 0 // actor state
     for (msg in channel) { // iterate over incoming messages
         when (msg) {
             is IncCounter -> counter++
-            is GetCounter -> msg.response.send(counter)
+            is GetCounter -> msg.response.complete(counter)
         }
     }
 }
 
-fun main(args: Array<String>) = runBlocking<Unit> {
+fun main() = runBlocking<Unit> {
     val counter = counterActor() // create the actor
-    counter.send(IncCounter)
-    val response = Channel<Int>()
+    withContext(Dispatchers.Default) {
+        massiveRun {
+            counter.send(IncCounter)
+        }
+    }
+    // send a message to get a counter value from an actor
+    val response = CompletableDeferred<Int>()
     counter.send(GetCounter(response))
-    println("Counter = ${response.receive()}")
+    println("Counter = ${response.await()}")
     counter.close() // shutdown the actor
 }
 
