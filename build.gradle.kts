@@ -18,7 +18,7 @@ buildscript {
 plugins {
     application
     kotlin("jvm") version "1.4.0"
-    id("kotlinx-atomicfu").version("0.14.3")
+    id("kotlinx-atomicfu").version("0.14.4")
     id("com.github.ben-manes.versions").version("0.29.0")
 }
 
