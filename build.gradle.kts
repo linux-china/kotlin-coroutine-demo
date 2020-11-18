@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotlinVersion = "1.4.10"
-val coroutinesVersion = "1.4.0-M1"
+val coroutinesVersion = "1.4.1"
 val junit5Version = "5.7.0"
 
 
@@ -19,7 +19,7 @@ plugins {
     application
     kotlin("jvm") version "1.4.10"
     id("kotlinx-atomicfu").version("0.14.4")
-    id("com.github.ben-manes.versions").version("0.33.0")
+    id("com.github.ben-manes.versions").version("0.36.0")
 }
 
 
@@ -57,6 +57,6 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = "1.8"
         javaParameters = true
-        freeCompilerArgs = listOf("-Xjsr305=strict","-Xjvm-default=all")
+        freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all")
     }
 }
