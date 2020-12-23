@@ -1,3 +1,5 @@
+@file:Suppress("EXPERIMENTAL_API_USAGE")
+
 package demo
 
 import kotlinx.coroutines.delay
@@ -28,7 +30,7 @@ class FlowTest {
     }
 
     @Test
-    fun testIntropWithReactor() = runBlocking {
+    fun testIntropWithReactor(): Unit = runBlocking {
         val flow1 = flowOf(1, 2, 3)
         flow1.asFlux()
     }
@@ -48,6 +50,34 @@ class FlowTest {
         (1..5).forEach {
             delay(500)
             stateFlow.value = it
+        }
+
+        // Cancel running job
+        job.cancel()
+        job.join()
+    }
+
+    @Test
+    fun testSharedFlow() = runBlocking {
+        val sharedFlow = MutableSharedFlow<Int>(1)
+        // Observe values
+        val job = launch {
+            sharedFlow.collect {
+                print("$it ")
+            }
+        }
+
+        val job2 = launch {
+            sharedFlow.collect() {
+                print("$it ")
+            }
+        }
+
+
+        // Change values
+        (1..5).forEach {
+            delay(500)
+            sharedFlow.emit(it)
         }
 
         // Cancel running job
