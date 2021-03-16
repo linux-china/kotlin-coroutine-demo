@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotlinVersion = "1.4.30"
-val coroutinesVersion = "1.4.2"
+val kotlinVersion = "1.4.31"
+val coroutinesVersion = "1.4.3"
 val junit5Version = "5.7.1"
 
 
@@ -9,14 +9,15 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    dependencies {
-        classpath("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.2.0")
-    }
+}
+
+repositories {
+    mavenCentral()
 }
 
 plugins {
     application
-    kotlin("jvm") version "1.4.30"
+    kotlin("jvm") version "1.4.31"
     id("kotlinx-atomicfu").version("0.15.1")
     id("com.github.ben-manes.versions").version("0.36.0")
 }
@@ -35,10 +36,10 @@ dependencies {
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
     implementation("org.jetbrains.kotlinx:atomicfu:0.15.1")
-    implementation("io.projectreactor:reactor-core:3.4.3")
+    implementation("io.projectreactor:reactor-core:3.4.4")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${coroutinesVersion}")
@@ -47,13 +48,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junit5Version")
 }
 
-repositories {
-    mavenCentral()
-    jcenter()
+val compiler = javaToolchains.compilerFor {
+    languageVersion.set(JavaLanguageVersion.of(8))
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
+        jdkHome = compiler.get().metadata.installationPath.asFile.absolutePath
         jvmTarget = "1.8"
         javaParameters = true
         freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all")
