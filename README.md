@@ -41,6 +41,7 @@ public interface UserService {
 
 * Unit Testing Channels & Flows: https://speakerdeck.com/heyitsmohit/unit-testing-channels-and-flows-droidcon-americas
 * Introduction to Coroutines and Channels: https://play.kotlinlang.org/hands-on/Introduction%20to%20Coroutines%20and%20Channels/01_Introduction
-* Kotlin coroutines: https://github.com/Kotlin/kotlinx.coroutines
+* Kotlin Coroutines: https://github.com/Kotlin/kotlinx.coroutines
 * Kotlin Flow: https://kotlinlang.org/docs/reference/coroutines/flow.html
 * AtomicFU: https://github.com/Kotlin/kotlinx.atomicfu
+* Kotlin Coroutines 1.5: GlobalScope Marked as Delicate, Refined Channels API, and More: https://blog.jetbrains.com/kotlin/2021/05/kotlin-coroutines-1-5-0-released/
