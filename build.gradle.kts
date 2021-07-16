@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotlinVersion = "1.5.20"
-val coroutinesVersion = "1.5.0"
+val kotlinVersion = "1.5.21"
+val coroutinesVersion = "1.5.1"
 val junit5Version = "5.7.2"
 
 
@@ -17,7 +17,7 @@ repositories {
 
 plugins {
     application
-    kotlin("jvm") version "1.5.20"
+    kotlin("jvm") version "1.5.21"
     id("kotlinx-atomicfu").version("0.16.2")
     id("com.github.ben-manes.versions").version("0.39.0")
 }
