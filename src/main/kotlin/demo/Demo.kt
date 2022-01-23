@@ -1,9 +1,9 @@
+@file:Suppress("EXPERIMENTAL_IS_NOT_ENABLED")
+@file:OptIn(DelicateCoroutinesApi::class)
+
 package demo
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 fun doSomething(name: String) = GlobalScope.async {
     println(name)
