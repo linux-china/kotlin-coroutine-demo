@@ -35,7 +35,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8", kotlinVersion))
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
-    implementation("org.jetbrains.kotlinx:atomicfu:0.17.0")
+    implementation("org.jetbrains.kotlinx:atomicfu:0.17.1")
     implementation("io.projectreactor:reactor-core:3.4.16")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
