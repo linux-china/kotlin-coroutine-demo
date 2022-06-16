@@ -5,7 +5,7 @@ package demo
 
 import kotlinx.coroutines.*
 
-fun doSomething(name: String) = GlobalScope.async {
+suspend fun doSomething(name: String) = coroutineScope {
     println(name)
 }
 
@@ -21,8 +21,8 @@ suspend fun doSomethingUsefulTwo(): Int {
 }
 
 
-fun main(args: Array<String>) {
-    val job = GlobalScope.launch {
+suspend fun main(args: Array<String>) {
+    coroutineScope {
         // create new coroutine in common thread pool
         val result = doSomethingUsefulOne()
         println("World! $result") // print after delay
