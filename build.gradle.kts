@@ -18,7 +18,7 @@ repositories {
 plugins {
     application
     kotlin("jvm") version "1.7.0"
-    id("kotlinx-atomicfu").version("0.17.2")
+    id("kotlinx-atomicfu").version("0.18.0")
     id("com.github.ben-manes.versions").version("0.42.0")
 }
 
@@ -35,7 +35,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8", kotlinVersion))
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
-    implementation("org.jetbrains.kotlinx:atomicfu:0.17.2")
+    implementation("org.jetbrains.kotlinx:atomicfu:0.18.0")
     implementation("io.projectreactor:reactor-core:3.4.18")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
