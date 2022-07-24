@@ -45,3 +45,4 @@ public interface UserService {
 * Kotlin Flow: https://kotlinlang.org/docs/reference/coroutines/flow.html
 * AtomicFU: https://github.com/Kotlin/kotlinx.atomicfu
 * Kotlin Coroutines 1.5: GlobalScope Marked as Delicate, Refined Channels API, and More: https://blog.jetbrains.com/kotlin/2021/05/kotlin-coroutines-1-5-0-released/
+* Understanding Kotlin Coroutines: https://reflectoring.io/understanding-kotlin-coroutines-tutorial/
