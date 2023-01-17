@@ -30,12 +30,12 @@ application {
 }
 
 dependencies {
-    implementation("org.jetbrains:annotations:23.1.0")
+    implementation("org.jetbrains:annotations:24.0.0")
     implementation(kotlin("stdlib", kotlinVersion))
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
     implementation("org.jetbrains.kotlinx:atomicfu:0.18.5")
-    implementation("io.projectreactor:reactor-core:3.4.24")
+    implementation("io.projectreactor:reactor-core:3.5.2")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.1")
     implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
