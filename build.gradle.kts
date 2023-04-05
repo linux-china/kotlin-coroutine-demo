@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotlinVersion = "1.8.20-RC"
+val kotlinVersion = "1.8.20"
 val coroutinesVersion = "1.7.0-Beta"
 val junit5Version = "5.9.2"
 
@@ -17,8 +17,8 @@ repositories {
 
 plugins {
     application
-    kotlin("jvm") version "1.8.20-RC"
-    id("org.jetbrains.kotlin.plugin.atomicfu").version("1.8.20-RC")
+    kotlin("jvm") version "1.8.20"
+    id("org.jetbrains.kotlin.plugin.atomicfu").version("1.8.20")
     id("com.github.ben-manes.versions").version("0.46.0")
 }
 
@@ -34,7 +34,7 @@ dependencies {
     implementation(kotlin("stdlib", kotlinVersion))
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
-    implementation("org.jetbrains.kotlinx:atomicfu:0.20.0")
+    implementation("org.jetbrains.kotlinx:atomicfu:0.20.1")
     implementation("io.projectreactor:reactor-core:3.5.3")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
