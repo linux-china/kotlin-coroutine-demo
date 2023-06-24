@@ -17,7 +17,7 @@ repositories {
 
 plugins {
     application
-    kotlin("jvm") version "1.8.21"
+    kotlin("jvm") version "1.8.22"
     id("org.jetbrains.kotlin.plugin.atomicfu").version("1.8.22")
     id("com.github.ben-manes.versions").version("0.46.0")
 }
