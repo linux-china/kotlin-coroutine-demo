@@ -19,7 +19,7 @@ plugins {
     application
     kotlin("jvm") version "2.0.0-Beta1"
     id("org.jetbrains.kotlin.plugin.atomicfu").version("2.0.0-Beta1")
-    id("com.github.ben-manes.versions").version("0.46.0")
+    id("com.github.ben-manes.versions").version("0.50.0")
 }
 
 
@@ -34,7 +34,7 @@ dependencies {
     implementation(kotlin("stdlib", kotlinVersion))
     implementation(kotlin("reflect", kotlinVersion))
     testImplementation(kotlin("test-junit5", kotlinVersion))
-    implementation("org.jetbrains.kotlinx:atomicfu:${kotlinVersion}")
+    implementation("org.jetbrains.kotlinx:atomicfu:0.23.1")
     implementation("io.projectreactor:reactor-core:3.6.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0")
@@ -48,12 +48,12 @@ dependencies {
 }
 
 val compiler = javaToolchains.compilerFor {
-    languageVersion.set(JavaLanguageVersion.of(17))
+    languageVersion.set(JavaLanguageVersion.of(21))
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "21"
         javaParameters = true
         freeCompilerArgs = listOf("-Xjsr305=strict", "-Xjvm-default=all", "-language-version=2.0")
     }
